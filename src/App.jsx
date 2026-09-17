@@ -1,4 +1,6 @@
 import React from "react";
+import cardimg from "./assets/sunset.jpg";
+import aboutimg from "./assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
 
 const App = () => {
   return (
@@ -62,11 +64,7 @@ const App = () => {
           </a>
         </div>
         <div>
-          <img
-            src="images/marek-studzinski-8T8QTMRZmEg-unsplash.jpg"
-            alt="About Us"
-            width="200px"
-          />
+          <img src={aboutimg} alt="About Us" width="200px" />
         </div>
       </section>
       {/* <!-- Testimony Section --> */}
@@ -75,7 +73,7 @@ const App = () => {
         <h2>Feedback From Our Students</h2>
         <div className="testimonials-container">
           <div className="card">
-            <img src="images/sunset.jpg" alt="sunset" />
+            <img src={cardimg} alt="sunset" />
             <h3>Oluchi Iwueze</h3>
             <p>
               This Academy Completely changed my Career. I learnt a lot of
@@ -83,7 +81,7 @@ const App = () => {
             </p>
           </div>
           <div className="card">
-            <img src="images/sunset.jpg" alt="sunset" />
+            <img src={cardimg} alt="sunset" />
             <h3>Oluchi Iwueze</h3>
             <p>
               This Academy Completely changed my Career. I learnt a lot of
@@ -91,7 +89,7 @@ const App = () => {
             </p>
           </div>
           <div className="card">
-            <img src="images/sunset.jpg" alt="sunset" />
+            <img src={cardimg} alt="sunset" />
             <h3>Oluchi Iwueze</h3>
             <p>
               This Academy Completely changed my Career. I learnt a lot of

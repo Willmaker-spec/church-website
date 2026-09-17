@@ -73,7 +73,7 @@ main {
 
 /* hero section */
 .hero {
-  background-image: url(./images/debby-hudson-sgdyBq6kheQ-unsplash.jpg);
+  background-image: url(./assets/background.jpg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
