@@ -1,0 +1,112 @@
+/* ABOUT SECTION */
+.about {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background-color: #f5f5f5;
+}
+
+/* left side of the about section */
+.about-text {
+  width: 50%;
+  flex: 1;
+}
+
+.about-text h3 {
+  color: blue;
+  font-size: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.about-text h2 {
+  color: black;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.about-text p {
+  color: hsl(0, 0%, 30%);
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.about-text ul {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+
+.about-text .btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.about-text a {
+  text-decoration: none;
+  color: white;
+}
+
+.about-text .btn:hover {
+  background-color: hsl(240, 100%, 70%);
+  color: aliceblue;
+  cursor: progress;
+}
+
+.about-image {
+  flex: 1;
+  width: 50%;
+}
+
+/* ABOUT RESPONSIVESNES */
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 60px 7%;
+    gap: 35px;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .about-text h2 {
+    font-size: 36px;
+  }
+  .about-text p {
+    font-size: 17px;
+  }
+  .about-image {
+    width: 100%;
+  }
+  .about-text .btn {
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    flex-direction: column;
+    padding: 50px 6%;
+    gap: 20px;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .about-text h2 {
+    font-size: 25px;
+  }
+  .about-text p {
+    font-size: 14px;
+  }
+  .about-image {
+    width: 100%;
+  }
+  .about-text .btn {
+    padding: 10px 20px;
+  }
+}
