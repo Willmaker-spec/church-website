@@ -1,7 +1,8 @@
 import React from "react";
 import "./About.css";
-import aboutimg from "../../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
-const about = () => {
+import aboutimg from "../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
+
+const About = () => {
   return (
     <div>
       {/* <!-- About Section --> */}
@@ -37,4 +38,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

@@ -1,7 +1,7 @@
 import React from "react";
-import "./cta.css";
+import "./Cta.css";
 
-const CTA = () => {
+const Cta = () => {
   return (
     <div>
       {/* <!-- CALL TO ACTION --> */}
@@ -21,4 +21,4 @@ const CTA = () => {
   );
 };
 
-export default CTA;
+export default Cta;

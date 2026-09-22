@@ -1,8 +1,8 @@
 import React from "react";
 import "./Testimonial.css";
-import cardimg from "../../../assets/sunset.jpg";
+import cardimg from "../../assets/sunset.jpg";
 
-const testimonial = () => {
+const Testimonial = () => {
   return (
     <div>
       {/* <!-- Testimony Section --> */}
@@ -36,9 +36,8 @@ const testimonial = () => {
           </div>
         </div>
       </section>
-      ;
     </div>
   );
 };
 
-export default testimonial;
+export default Testimonial;
