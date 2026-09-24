@@ -1,7 +1,7 @@
 import React from "react";
 import LandingScreen from "./components/screens/LandingScreen";
 import { Route, Routes } from "react-router-dom";
-import ContactUsScreen from "./components/screens/contactusScreen";
+import ContactUsScreen from "./components/screens/ContactUsScreen";
 import AboutScreen from "./components/screens/AboutScreen";
 import ServicesScreen from "./components/screens/ServicesScreen";
 
