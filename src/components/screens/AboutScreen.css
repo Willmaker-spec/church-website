@@ -1,0 +1,357 @@
+/* AboutScreen.css */
+
+/* Main Container Styles */
+.about-container {
+  background-color: #f8fafc;
+  color: #334155;
+  min-height: 100vh;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* Custom Text Selection Highlight */
+.about-container ::selection {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+/* --- 1. HERO SECTION --- */
+.hero-section {
+  padding: 5rem 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  line-height: 1.25;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 3rem;
+  }
+}
+
+.subheadline {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  color: #475569;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+}
+
+/* --- 2. STATS BAR --- */
+.stats-bar {
+  background-color: #312e81;
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+
+.stats-grid {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #a5b4fc;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 3rem;
+  }
+}
+
+.stat-label {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e0e7ff;
+  font-weight: 500;
+}
+
+/* --- 3. CORE VALUES SECTION --- */
+.values-section {
+  padding: 5rem 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0;
+}
+
+.section-header p {
+  margin-top: 0.5rem;
+  color: #475569;
+  margin-bottom: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.value-card:hover {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.value-icon {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+  background-color: #e0e7ff;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.value-desc {
+  color: #475569;
+  line-height: 1.625;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* --- 4. TEAM SECTION --- */
+.team-section {
+  padding: 5rem 1.5rem;
+  background-color: #f1f5f9;
+}
+
+.team-container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.team-member {
+  text-align: center;
+  width: 12rem;
+}
+
+.avatar-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.avatar-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Hover effects using custom parenting wrapper */
+.team-member:hover .avatar-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.member-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.member-role {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4f46e5;
+  margin-top: 0.125rem;
+  margin-bottom: 0;
+}
+
+/* --- 5. CALL TO ACTION SECTION --- */
+.cta-section {
+  padding: 5rem 1.5rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .cta-card {
+    padding: 4rem;
+  }
+}
+
+.cta-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 2.25rem;
+  }
+}
+
+.cta-desc {
+  margin-top: 1rem;
+  color: #e0e7ff;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.625;
+  margin-bottom: 0;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #4f46e5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-color: #f8fafc;
+}
+
+.btn-secondary {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: 1px solid #818cf8;
+}
+
+.btn-secondary:hover {
+  background-color: #4338ca;
+}

@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import ContactUsScreen from "./components/screens/ContactUsScreen";
 import AboutScreen from "./components/screens/AboutScreen";
 import ServicesScreen from "./components/screens/ServicesScreen";
+import Footer from "./components/footer/Footer";
 
 import Header from "./components/header/Header";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/services" element={<ServicesScreen />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
