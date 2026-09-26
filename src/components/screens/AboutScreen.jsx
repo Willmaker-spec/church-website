@@ -1,5 +1,7 @@
 import React from "react";
 import "./AboutScreen.css";
+import user1 from "../../assets/user1.jpg";
+import user2 from "../../assets/user2.jpg";
 
 const AboutScreen = () => {
   return (
@@ -81,7 +83,7 @@ const AboutScreen = () => {
           <div className="team-grid">
             <div className="team-member group">
               <div className="avatar-frame">
-                <img src="" alt="Alex Rivera" className="avatar-img" />
+                <img src={user1} alt="Alex Rivera" className="avatar-img" />
               </div>
               <h3 className="member-name">Alex Rivera</h3>
               <p className="member-role">Co-Founder &amp; CEO</p>
@@ -89,7 +91,7 @@ const AboutScreen = () => {
 
             <div className="team-member group">
               <div className="avatar-frame">
-                <img src="" alt="Marcus Chen" className="avatar-img" />
+                <img src={user2} alt="Marcus Chen" className="avatar-img" />
               </div>
               <h3 className="member-name">Marcus Chen</h3>
               <p className="member-role">Head of Engineering</p>
