@@ -1,21 +1,5 @@
 import React, { useState } from "react";
-import "./ContactUsScreen.css"; // Ensure this matches the name and path of your CSS file
-
-const contactInfo = {
-  title: "Get in touch",
-  description:
-    "Have questions about features, pricing, or custom builds? Drop us a line and our engineering team will get right back to you.",
-  details: [
-    { icon: "📍", text: "123 Innovation Way, Suite 400, San Francisco, CA" },
-    { icon: "✉️", text: "support@yourdomain.com" },
-    { icon: "📞", text: "+1 (555) 019-2834" },
-  ],
-  socials: [
-    { name: "Twitter", url: "#" },
-    { name: "GitHub", url: "#" },
-    { name: "LinkedIn", url: "#" },
-  ],
-};
+import "./ContactUsScreen.css";
 
 const ContactUsScreen = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +16,6 @@ const ContactUsScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here (e.g., API call)
     alert(
       `Thanks for reaching out, ${formData.firstName}! We will reply soon.`,
     );
@@ -42,35 +25,50 @@ const ContactUsScreen = () => {
   return (
     <div className="contact-container">
       <div className="contact-card-wrapper">
-        {/* LEFT COLUMN: INFO */}
         <div className="info-panel">
           <div>
-            <h1 className="info-title">{contactInfo.title}</h1>
-            <p className="info-desc">{contactInfo.description}</p>
+            <h1 className="info-title">Get in touch</h1>
+            <p className="info-desc">
+              Have questions about features, pricing, or custom builds? Drop us
+              a line and our engineering team will get right back to you.
+            </p>
 
             <div className="info-list">
-              {contactInfo.details.map((item, index) => (
-                <div key={index} className="info-item">
-                  <span className="info-icon">{item.icon}</span>
-                  <span className="info-text">{item.text}</span>
-                </div>
-              ))}
+              <div className="info-item">
+                <span className="info-icon">📍</span>
+                <span className="info-text">
+                  123 Innovation Way, Suite 400, San Francisco, CA
+                </span>
+              </div>
+
+              <div className="info-item">
+                <span className="info-icon">✉️</span>
+                <span className="info-text">support@yourdomain.com</span>
+              </div>
+
+              <div className="info-item">
+                <span className="info-icon">📞</span>
+                <span className="info-text">+1 (555) 019-2834</span>
+              </div>
             </div>
           </div>
 
           <div className="socials-wrapper">
             <span className="socials-label">Follow our updates:</span>
             <div className="socials-links">
-              {contactInfo.socials.map((social, index) => (
-                <a key={index} href={social.url} className="social-link">
-                  {social.name}
-                </a>
-              ))}
+              <a href="#" className="social-link">
+                Twitter
+              </a>
+              <a href="#" className="social-link">
+                GitHub
+              </a>
+              <a href="#" className="social-link">
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: FORM */}
         <div className="form-panel">
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-row">
@@ -85,6 +83,7 @@ const ContactUsScreen = () => {
                   required
                 />
               </div>
+
               <div className="form-group">
                 <label htmlFor="lastName">Last name</label>
                 <input

@@ -1,69 +1,5 @@
 import React, { useState } from "react";
-import "./ServicesScreen.css"; // Ensure this matches the name and path of your CSS file
-
-const pageData = {
-  hero: {
-    badge: "What We Do",
-    headline: "High-performance services tailored to your scale.",
-    subheadline:
-      "We design, deploy, and maintain custom digital infrastructure so your team can focus exclusively on ship dates and growth metrics.",
-  },
-  services: [
-    {
-      icon: "⚡",
-      title: "Cloud Infrastructure",
-      description:
-        "Automated AWS and GCP cluster scaling, zero-downtime migrations, and edge routing designed for ultra-low latency.",
-    },
-    {
-      icon: "🎨",
-      title: "UI/UX Engineering",
-      description:
-        "High-fidelity prototypes built natively in React and Next.js, prioritizing semantic structural layouts and perfect accessibility.",
-    },
-    {
-      icon: "🔒",
-      title: "Security Auditing",
-      description:
-        "End-to-end vulnerability scanning, automated penetration testing, and absolute compliance alignment protocols.",
-    },
-    {
-      icon: "📈",
-      title: "Performance Optimization",
-      description:
-        "Database indexing tweaks, image pipeline compression, and asset bundle trimming to pull your Core Web Vitals into green.",
-    },
-    {
-      icon: "📱",
-      title: "Cross-Platform Mobile",
-      description:
-        "Native-quality iOS and Android applications written from a single robust React Native or Flutter codebase.",
-    },
-    {
-      icon: "🤖",
-      title: "AI Integration",
-      description:
-        "Pipeline connectivity with modern LLM workflows, custom embedding engines, and internal data analysis loops.",
-    },
-  ],
-  faqs: [
-    {
-      question: "How long does a typical migration project take?",
-      answer:
-        "Most architecture and infrastructure setups are finished within 2 to 4 weeks, depending on system complexity.",
-    },
-    {
-      question: "Do you offer post-launch emergency support?",
-      answer:
-        "Yes, our engineering teams provide complete SLA-backed 24/7 technical monitoring solutions for enterprise accounts.",
-    },
-    {
-      question: "Can you work within our pre-existing codebase?",
-      answer:
-        "Absolutely. We adapt cleanly to your established Git workflows, lint rules, and architectural guidelines.",
-    },
-  ],
-};
+import "./ServicesScreen.css";
 
 const ServicesScreen = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -74,27 +10,76 @@ const ServicesScreen = () => {
 
   return (
     <div className="services-container">
-      {/* 1. HERO SECTION */}
       <section className="services-hero">
-        <span className="services-badge">{pageData.hero.badge}</span>
-        <h1 className="services-headline">{pageData.hero.headline}</h1>
-        <p className="services-subheadline">{pageData.hero.subheadline}</p>
+        <span className="services-badge">What We Do</span>
+        <h1 className="services-headline">
+          High-performance services tailored to your scale.
+        </h1>
+        <p className="services-subheadline">
+          We design, deploy, and maintain custom digital infrastructure so your
+          team can focus exclusively on ship dates and growth metrics.
+        </p>
       </section>
 
-      {/* 2. SERVICES CARD GRID */}
       <section className="services-grid-section">
         <div className="services-grid">
-          {pageData.services.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon-box">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-desc">{service.description}</p>
-            </div>
-          ))}
+          <div className="service-card">
+            <div className="service-icon-box">⚡</div>
+            <h3 className="service-title">Cloud Infrastructure</h3>
+            <p className="service-desc">
+              Automated AWS and GCP cluster scaling, zero-downtime migrations,
+              and edge routing designed for ultra-low latency.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon-box">🎨</div>
+            <h3 className="service-title">UI/UX Engineering</h3>
+            <p className="service-desc">
+              High-fidelity prototypes built natively in React and Next.js,
+              prioritizing semantic structural layouts and perfect
+              accessibility.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon-box">🔒</div>
+            <h3 className="service-title">Security Auditing</h3>
+            <p className="service-desc">
+              End-to-end vulnerability scanning, automated penetration testing,
+              and absolute compliance alignment protocols.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon-box">📈</div>
+            <h3 className="service-title">Performance Optimization</h3>
+            <p className="service-desc">
+              Database indexing tweaks, image pipeline compression, and asset
+              bundle trimming to pull your Core Web Vitals into green.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon-box">📱</div>
+            <h3 className="service-title">Cross-Platform Mobile</h3>
+            <p className="service-desc">
+              Native-quality iOS and Android applications written from a single
+              robust React Native or Flutter codebase.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon-box">🤖</div>
+            <h3 className="service-title">AI Integration</h3>
+            <p className="service-desc">
+              Pipeline connectivity with modern LLM workflows, custom embedding
+              engines, and internal data analysis loops.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 3. CORE BENEFITS SPLIT BANNER */}
       <section className="benefits-banner">
         <div className="banner-inner">
           <div className="banner-left">
@@ -119,7 +104,6 @@ const ServicesScreen = () => {
         </div>
       </section>
 
-      {/* 4. FAQ ACCORDION */}
       <section className="faq-section">
         <div className="faq-header">
           <h2>Frequently Asked Questions</h2>
@@ -127,23 +111,59 @@ const ServicesScreen = () => {
         </div>
 
         <div className="faq-list">
-          {pageData.faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`faq-item ${openFaq === index ? "active" : ""}`}
-              onClick={() => toggleFaq(index)}
-            >
-              <div className="faq-question">
-                <h3>{faq.question}</h3>
-                <span className="faq-toggle-icon">
-                  {openFaq === index ? "−" : "+"}
-                </span>
-              </div>
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
-              </div>
+          <div
+            className={`faq-item ${openFaq === 0 ? "active" : ""}`}
+            onClick={() => toggleFaq(0)}
+          >
+            <div className="faq-question">
+              <h3>How long does a typical migration project take?</h3>
+              <span className="faq-toggle-icon">
+                {openFaq === 0 ? "−" : "+"}
+              </span>
             </div>
-          ))}
+            <div className="faq-answer">
+              <p>
+                Most architecture and infrastructure setups are finished within
+                2 to 4 weeks, depending on system complexity.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className={`faq-item ${openFaq === 1 ? "active" : ""}`}
+            onClick={() => toggleFaq(1)}
+          >
+            <div className="faq-question">
+              <h3>Do you offer post-launch emergency support?</h3>
+              <span className="faq-toggle-icon">
+                {openFaq === 1 ? "−" : "+"}
+              </span>
+            </div>
+            <div className="faq-answer">
+              <p>
+                Yes, our engineering teams provide complete SLA-backed 24/7
+                technical monitoring solutions for enterprise accounts.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className={`faq-item ${openFaq === 2 ? "active" : ""}`}
+            onClick={() => toggleFaq(2)}
+          >
+            <div className="faq-question">
+              <h3>Can you work within our pre-existing codebase?</h3>
+              <span className="faq-toggle-icon">
+                {openFaq === 2 ? "−" : "+"}
+              </span>
+            </div>
+            <div className="faq-answer">
+              <p>
+                Absolutely. We adapt cleanly to your established Git workflows,
+                lint rules, and architectural guidelines.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -1,99 +1,59 @@
 /* AboutScreen.css */
 
-/* Main Container Styles */
 .about-container {
-  background-color: #f8fafc;
-  color: #334155;
+  background-color: #f5f5f5;
+  color: #111827;
   min-height: 100vh;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Custom Text Selection Highlight */
-.about-container ::selection {
-  background-color: #6366f1;
-  color: #ffffff;
-}
-
-/* --- 1. HERO SECTION --- */
 .hero-section {
-  padding: 5rem 1.5rem;
-  max-width: 64rem;
-  margin: 0 auto;
+  padding: 60px 7%;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .hero-section {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
 }
 
 .badge {
   display: inline-block;
   background-color: #e0e7ff;
-  color: #4f46e5;
-  font-size: 0.875rem;
-  font-weight: 600;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
 }
 
 .headline {
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #0f172a;
-  line-height: 1.25;
-  max-width: 48rem;
+  max-width: 900px;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .headline {
-    font-size: 3rem;
-  }
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  color: #111827;
 }
 
 .subheadline {
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 20px auto 0;
   color: #475569;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.625;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-/* --- 2. STATS BAR --- */
 .stats-bar {
-  background-color: #312e81;
+  background-color: #1d4ed8;
   color: #ffffff;
-  padding: 3rem 1.5rem;
+  padding: 35px 7%;
 }
 
 .stats-grid {
-  max-width: 64rem;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
   text-align: center;
-}
-
-@media (min-width: 640px) {
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .stat-item {
@@ -102,256 +62,195 @@
 }
 
 .stat-value {
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: #a5b4fc;
-}
-
-@media (min-width: 768px) {
-  .stat-value {
-    font-size: 3rem;
-  }
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #dbeafe;
 }
 
 .stat-label {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #e0e7ff;
-  font-weight: 500;
+  color: #dbeafe;
 }
 
-/* --- 3. CORE VALUES SECTION --- */
-.values-section {
-  padding: 5rem 1.5rem;
-  max-width: 64rem;
-  margin: 0 auto;
+.values-section,
+.team-section,
+.cta-section {
+  padding: 60px 7%;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 .section-header h2 {
-  font-size: 1.875rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: #0f172a;
   margin: 0;
+  color: #111827;
+  font-size: clamp(2rem, 3vw, 2.5rem);
 }
 
 .section-header p {
-  margin-top: 0.5rem;
+  margin-top: 12px;
   color: #475569;
-  margin-bottom: 0;
+  font-size: 18px;
 }
 
 .values-grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 768px) {
-  .values-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
 }
 
 .value-card {
   background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f1f5f9;
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
-}
-
-.value-card:hover {
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 30px 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
 }
 
 .value-icon {
-  font-size: 1.875rem;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   background-color: #e0e7ff;
-  width: 3rem;
-  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.75rem;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .value-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 24px;
 }
 
 .value-desc {
-  color: #475569;
-  line-height: 1.625;
-  font-size: 0.875rem;
   margin: 0;
+  color: #475569;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-/* --- 4. TEAM SECTION --- */
 .team-section {
-  padding: 5rem 1.5rem;
-  background-color: #f1f5f9;
+  background-color: #eef2ff;
 }
 
 .team-container {
-  max-width: 64rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .team-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .team-member {
+  width: 220px;
   text-align: center;
-  width: 12rem;
 }
 
 .avatar-frame {
-  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 18px;
   overflow: hidden;
-  border-radius: 1rem;
-  aspect-ratio: 1 / 1;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
+  background-color: #dbeafe;
+  border: 1px solid #cbd5e1;
 }
 
 .avatar-img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
-  filter: grayscale(100%);
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
-}
-
-/* Hover effects using custom parenting wrapper */
-.team-member:hover .avatar-img {
-  filter: grayscale(0%);
-  transform: scale(1.05);
+  object-fit: cover;
+  display: block;
 }
 
 .member-name {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
+  margin: 0 0 6px;
+  color: #111827;
+  font-size: 22px;
 }
 
 .member-role {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #4f46e5;
-  margin-top: 0.125rem;
-  margin-bottom: 0;
-}
-
-/* --- 5. CALL TO ACTION SECTION --- */
-.cta-section {
-  padding: 5rem 1.5rem;
-  max-width: 44rem;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  color: #475569;
 }
 
 .cta-card {
-  background: linear-gradient(135deg, #4f46e5, #6d28d9);
-  color: #ffffff;
-  border-radius: 1.5rem;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .cta-card {
-    padding: 4rem;
-  }
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 40px 30px;
+  text-align: center;
 }
 
 .cta-title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .cta-title {
-    font-size: 2.25rem;
-  }
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #111827;
 }
 
 .cta-desc {
-  margin-top: 1rem;
-  color: #e0e7ff;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1rem;
-  line-height: 1.625;
-  margin-bottom: 0;
+  color: #475569;
+  font-size: 18px;
+  margin: 18px auto 0;
+  max-width: 650px;
+  line-height: 1.6;
 }
 
 .cta-buttons {
-  margin-top: 2rem;
+  margin-top: 24px;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn-primary,
 .btn-secondary {
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  font-size: 0.875rem;
   border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 700;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
 }
 
 .btn-primary {
-  background-color: #ffffff;
-  color: #4f46e5;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btn-primary:hover {
-  background-color: #f8fafc;
+  background-color: #1d4ed8;
+  color: #ffffff;
 }
 
 .btn-secondary {
-  background-color: #4f46e5;
-  color: #ffffff;
-  border: 1px solid #818cf8;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  border: 1px solid #1d4ed8;
 }
 
-.btn-secondary:hover {
-  background-color: #4338ca;
+@media (max-width: 768px) {
+  .stats-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section,
+  .values-section,
+  .team-section,
+  .cta-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

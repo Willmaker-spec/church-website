@@ -3,7 +3,7 @@ import Hero from "../hero/Hero";
 import About from "../about/About";
 import Testimonial from "../testimonial/Testimonial";
 import CTA from "../cta/Cta";
-import Footer from "../footer/Footer";
+// import Footer from "../footer/Footer";
 
 const LandingScreen = () => {
   return (
@@ -12,7 +12,7 @@ const LandingScreen = () => {
       <About />
       <Testimonial />
       <CTA />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
