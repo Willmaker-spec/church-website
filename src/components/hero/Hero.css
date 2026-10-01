@@ -31,6 +31,7 @@ section .overlay {
 
 .overlay .hero-content button {
   padding: 10px 15px;
+  margin-top: 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -40,7 +41,7 @@ section .overlay {
 .overlay .hero-content button:hover {
   background-color: green;
   color: aliceblue;
-  cursor: progress;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

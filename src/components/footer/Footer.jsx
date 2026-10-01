@@ -23,13 +23,13 @@ const Footer = () => {
           <div className="footer-box">
             <h3>Quick Links</h3>
 
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
 
-            <a href="#">About</a>
+            <Link to="/about">About</Link>
 
-            <a href="#">Courses</a>
+            <Link to="/services">Services</Link>
 
-            <a href="#">Contact</a>
+            <Link to="/contact-us">Contact</Link>
           </div>
 
           {/* <!-- CONTACT --> */}

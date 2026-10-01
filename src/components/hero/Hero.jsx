@@ -1,5 +1,7 @@
 import React from "react";
 import "./Hero.css";
+import "../screens/RegisterScreen";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -14,7 +16,9 @@ const Hero = () => {
               Learn FullStack Devlopment, UI/UX, Graphics Design and many more
               tech careers.
             </p>
-            <button>Get Started</button>
+            <Link to="/register">
+              <button>Get Started</button>
+            </Link>
           </div>
         </div>
       </section>
