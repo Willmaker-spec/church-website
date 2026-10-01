@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import registerImage from "../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
 
 export default function SharpRegisterDesign() {
   const [formData, setFormData] = useState({
@@ -47,8 +48,7 @@ export default function SharpRegisterDesign() {
         sm={4}
         md={7}
         sx={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)",
+          backgroundImage: `url(${registerImage})`,
           backgroundRepeat: "no-repeat",
           backgroundColor: "#111",
           backgroundSize: "cover",
@@ -68,9 +68,7 @@ export default function SharpRegisterDesign() {
             letterSpacing: "-0.05em",
             mb: 1,
           }}
-        >
-          THE ARCHITECT.
-        </Typography>
+        ></Typography>
 
         <Typography
           variant="body1"
@@ -79,7 +77,7 @@ export default function SharpRegisterDesign() {
             letterSpacing: "0.05em",
           }}
         >
-          © 2026 INTERNAL NETWORK SYSTEM.
+          © 2026 EDEN TECH SYSTEM.
         </Typography>
       </Grid>
 

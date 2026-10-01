@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import loginImage from "../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
 
 export default function SharpLoginDesign() {
   return (
@@ -23,7 +24,7 @@ export default function SharpLoginDesign() {
         sm={4}
         md={7}
         sx={{
-          backgroundImage: "url(https://unsplash.com)",
+          backgroundImage: `url(${loginImage})`,
           backgroundRepeat: "no-repeat",
           backgroundColor: "#111",
           backgroundSize: "cover",
@@ -39,14 +40,12 @@ export default function SharpLoginDesign() {
           variant="h3"
           component="h1"
           sx={{ fontWeight: 900, letterSpacing: "-0.05em", mb: 1 }}
-        >
-          THE ARCHITECT.
-        </Typography>
+        ></Typography>
         <Typography
           variant="body1"
           sx={{ color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}
         >
-          © 2026 INTERNAL NETWORK SYSTEM.
+          © 2026 EDEN TECH SYSTEM.
         </Typography>
       </Grid>
 
