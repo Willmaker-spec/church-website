@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -7,36 +7,82 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import registerImage from "../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
-
 export default function SharpRegisterDesign() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    phoneNumber: "",
-    address: "",
-  });
+  const navigate = useNavigate();
+  //state for form data
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
 
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  //Message state for form submission feedback
+  const [message, setMessage] = useState("");
+  //loading state for form submission
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (event) => {
+  //handle form submission
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setMessage("");
+    setError("");
 
-    console.log("Registration Data:", formData);
+    if (!firstName.trim()) {
+      setError("First name is required");
+      return;
+    }
+    if (!lastName.trim()) {
+      setError("Last name is required");
+      return;
+    }
+    if (!email.trim()) {
+      setError("Email is required");
+      return;
+    }
+    if (!password.trim()) {
+      setError("Password is required");
+      return;
+    }
 
-    alert("Registration form submitted!");
+    setLoading(true);
+    try {
+      const payload = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        phoneNumber: phoneNumber,
+        address: address,
+      };
+      await axios.post(
+        "https://students-learning-api.onrender.com/api/auth",
+        payload,
+      );
+
+      setMessage("Account created successfully!");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setPhoneNumber("");
+      setAddress("");
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      setError(
+        error?.response?.data?.message ||
+          "An error occurred while creating the account.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
-
   return (
     <Grid container component="main" sx={{ minHeight: "100vh" }}>
       <CssBaseline />
@@ -108,11 +154,29 @@ export default function SharpRegisterDesign() {
           >
             CREATE ACCOUNT
           </Typography>
-
           <Typography variant="body2" color="text.secondary" sx={{ mb: 4 }}>
             Register to access your student account.
           </Typography>
-
+          {/* //success message */}
+          {message && (
+            <Typography
+              variant="body2"
+              color="success"
+              sx={{ mb: 2, fontWeight: 700 }}
+            >
+              {message}
+            </Typography>
+          )}
+          {/* //error message */}
+          {error && (
+            <Typography
+              variant="body2"
+              color="error"
+              sx={{ mb: 2, fontWeight: 700 }}
+            >
+              {error}
+            </Typography>
+          )}
           <Box component="form" onSubmit={handleSubmit} noValidate>
             <TextField
               margin="normal"
@@ -120,8 +184,8 @@ export default function SharpRegisterDesign() {
               fullWidth
               label="FIRST NAME"
               name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
+              value={firstName}
+              onChange={(event) => setFirstName(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -133,8 +197,8 @@ export default function SharpRegisterDesign() {
               fullWidth
               label="LAST NAME"
               name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
+              value={lastName}
+              onChange={(event) => setLastName(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -147,8 +211,8 @@ export default function SharpRegisterDesign() {
               type="email"
               label="EMAIL ADDRESS"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -161,8 +225,8 @@ export default function SharpRegisterDesign() {
               type="password"
               label="PASSWORD"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -173,8 +237,8 @@ export default function SharpRegisterDesign() {
               fullWidth
               label="PHONE NUMBER"
               name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
+              value={phoneNumber}
+              onChange={(event) => setPhoneNumber(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -185,8 +249,8 @@ export default function SharpRegisterDesign() {
               fullWidth
               label="ADDRESS"
               name="address"
-              value={formData.address}
-              onChange={handleChange}
+              value={address}
+              onChange={(event) => setAddress(event.target.value)}
               InputProps={{
                 sx: { borderRadius: 0 },
               }}
@@ -212,7 +276,7 @@ export default function SharpRegisterDesign() {
                 },
               }}
             >
-              CREATE ACCOUNT
+              {loading ? "Creating Account..." : "CREATE ACCOUNT"}
             </Button>
 
             <Typography

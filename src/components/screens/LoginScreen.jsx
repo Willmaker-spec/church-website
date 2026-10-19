@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -9,10 +8,78 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/marek-studzinski-8T8QTMRZmEg-unsplash.jpg";
+import { useState } from "react";
+import axios from "axios";
 
-export default function SharpLoginDesign() {
+export default function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  //message state for error handling
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
+
+  //Loading state
+  const [loading, setLoading] = useState(false);
+  //remember me state
+  const [rememberMe, setRememberMe] = useState(false);
+  //handle form submission
+  const handleLoginSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      //set loading state to true
+      setLoading(true);
+      //clear message and  error state
+      setMessage("");
+      setError(false);
+
+      //frontend validation
+      if (!email || !password) {
+        setMessage("Please fill in all fields");
+        setError(true);
+        setLoading(false);
+        return;
+      }
+      //Login Payload
+      const Payload = {
+        email,
+        password,
+      };
+      console.log(Payload);
+      //send login request to backend
+      let data = await axios.post(
+        "https://students-learning-api.onrender.com/api/auth/login",
+        Payload,
+      );
+      console.log(data);
+      setLoading(false);
+      setMessage("Login successful!, Welcome to Jubille Hub");
+      //save user data to local storage
+      localStorage.setItem("user", JSON.stringify(data.data));
+      //clear form fields
+      setEmail("");
+      setPassword("");
+      //login successful, redirect to home page
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage(
+          "An error occurred. Please check your credentials and try again.",
+        );
+      }
+      setError(true);
+      setLoading(false);
+    }
+  };
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
       <CssBaseline />
@@ -74,8 +141,19 @@ export default function SharpLoginDesign() {
           <Typography variant="body2" color="text.secondary" sx={{ mb: 4 }}>
             Please enter your credentials to access your terminal.
           </Typography>
-
-          <Box component="form" noValidate>
+          {/* //success and error messages */}
+          {message && (
+            <Typography variant="body2" color="success" sx={{ mb: 2 }}>
+              {message}
+            </Typography>
+          )}
+          {/* //error message */}
+          {error && (
+            <Typography variant="body2" color="error" sx={{ mb: 2 }}>
+              {message}
+            </Typography>
+          )}
+          <Box component="form" onSubmit={handleLoginSubmit} noValidate>
             <TextField
               margin="normal"
               required
@@ -83,6 +161,9 @@ export default function SharpLoginDesign() {
               id="email"
               label="EMAIL ADDRESS"
               name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
               autoFocus
               InputProps={{ sx: { borderRadius: 0 } }}
@@ -111,6 +192,8 @@ export default function SharpLoginDesign() {
               name="password"
               label="PASSWORD"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               id="password"
               autoComplete="current-password"
               InputProps={{ sx: { borderRadius: 0 } }}
@@ -193,7 +276,7 @@ export default function SharpLoginDesign() {
                 },
               }}
             >
-              ENTER SYSTEM
+              {loading ? "LOADING..." : "SIGN IN"}
             </Button>
 
             <Typography
